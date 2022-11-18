@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 const methodOverride = require("method-override")
-const pokemons = require("./models/pokemon")
+const pokemons = require("./models/pokemon")// import Pokemons data
 
 // Middleware
 app.use(express.urlencoded({extended: true}))
@@ -22,12 +22,14 @@ app.get("/pokemon", (req, res) =>{
 app.get("/pokemon/:id", (req, res) =>{
     res.render("show.ejs", {
         pokemon: pokemons[req.params.id],
-        index: req.params.id
+         index: req.params.id
 
     })
 });
 
 
+
+// Port
 app.listen(PORT, () => {
     console.log(`Listening to port ${PORT}`)
 })

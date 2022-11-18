@@ -8,10 +8,21 @@
     <title>PokedexLab</title>
 </head>
 <body>
+
+<div class="show">
     <h2><%= pokemon.name%></h2>
-    <img src="<%=pokemon.img%>">
+    <img src="<%=pokemon.img%>"><br>
+    <%= pokemon.type %> <br>
+    HP: <%= pokemon.stats.hp %><br>
+    Attack: <%= pokemon.stats.attack %><br>
+    Defense: <%= pokemon.stats.defense %><br>
+    SPattack: <%= pokemon.stats.spattack %><br>
+    SPdefense: <%= pokemon.stats.spdefense %><br>
+    Speed: <%= pokemon.stats.speed%><br>
+</div>
 
 
+<a href="/pokemon"><button>Back</button></a><br>
 
 </body>
 </html>

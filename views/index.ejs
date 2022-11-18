@@ -8,13 +8,15 @@
     <title>PokedexLab</title>
 </head>
 <body>
-  
-    <h1>Pokedex</h1>
-    <% for(let i = 0; i < 50; i++) { %>
-        <a href="/pokemon/<%=i%>"><%=pokemon[i].name %></a>
-        <img src="<%=pokemon[i].img%>" width="100px" height="100px">
+  <h1>Pokedex</h1>
+    
+  <div class="index">
+    
+    <% for(let i = 0; i < 20; i++) { %>
+        <a href="/pokemon/<%=i%>"><img src="<%=pokemon[i].img%>" width="150px" height="150px"></a>
+        
     <% } %>
-
+</div>
 
 </body>
 </html>
