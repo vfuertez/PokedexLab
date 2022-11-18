@@ -16,8 +16,16 @@ app.get("/pokemon", (req, res) =>{
     res.render("index.ejs", {
         pokemon: pokemons
     })
-})
+});
 
+// Show Route
+app.get("/pokemon/:id", (req, res) =>{
+    res.render("show.ejs", {
+        pokemon: pokemons[req.params.id],
+        index: req.params.id
+
+    })
+});
 
 
 app.listen(PORT, () => {

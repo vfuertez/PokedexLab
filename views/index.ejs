@@ -11,7 +11,7 @@
   
     <h1>Pokedex</h1>
     <% for(let i = 0; i < 50; i++) { %>
-        <p><%=pokemon[i].name %></p>
+        <a href="/pokemon/<%=i%>"><%=pokemon[i].name %></a>
         <img src="<%=pokemon[i].img%>" width="100px" height="100px">
     <% } %>
 
