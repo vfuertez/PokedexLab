@@ -18,6 +18,19 @@ app.get("/pokemon", (req, res) =>{
     })
 });
 
+// New Route
+
+app.get("/pokemon/add", (req, res) =>{
+    res.render("add.ejs")
+});
+
+
+
+
+
+
+
+
 // Show Route
 app.get("/pokemon/:id", (req, res) =>{
     res.render("show.ejs", {
