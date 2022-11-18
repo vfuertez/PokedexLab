@@ -1,15 +1,15 @@
-require("dotenv").config()
+require("dotenv").config();
 const express = require('express');
 const app = express();
 const PORT = 3000;
-const methodOverride = require("method-override")
-const pokemons = require("./models/pokemon")// import Pokemons data
+const methodOverride = require("method-override");
+const pokemons = require("./models/pokemon");// import Pokemons data
 
 // Middleware
-app.use(express.urlencoded({extended: true}))
-app.use(express.json())
-app.use(methodOverride('_method'))
-app.use("/static", express.static("public"))
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(methodOverride('_method'));
+app.use("/static", express.static("public"));
 
 // Index Route
 app.get("/pokemon", (req, res) =>{
@@ -18,14 +18,17 @@ app.get("/pokemon", (req, res) =>{
     })
 });
 
-// New Route
+// New route - add.ejs
 
 app.get("/pokemon/add", (req, res) =>{
     res.render("add.ejs")
 });
 
 
-
+// Create Route
+app.post("/pokemon", (req, res) =>{
+    res.json(req.body)
+})
 
 
 
