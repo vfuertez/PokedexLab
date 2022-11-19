@@ -15,8 +15,12 @@
     <% for(let i = 0; i < 20; i++) { %>
         <a href="/pokemon/<%=i%>"><img src="<%=pokemon[i].img%>" width="150px" height="150px"></a>
         
-        <%= pokemon[i].name %>
-    
+       Name: <%= pokemon[i].name %><br>
+       Type: <%= pokemon[i].type %><br>
+       HP: <%= pokemon[i].stats.hp %><br>
+       Attack: <%= pokemon[i].stats.attack %><br>
+       Defense: <%= pokemon[i].stats.defense %><br>
+       Speed: <%= pokemon[i].stats.speed%><br>
     <% } %>
 </div>
 
