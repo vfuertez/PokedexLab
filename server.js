@@ -28,12 +28,13 @@ app.get("/pokemon/new", (req, res) =>{
 
 
 // Create Route
-app.post("/pokemon", (req, res) =>{
+app.post("/pokemon", (req, res) => {
 
     // pushes the added pokemon to the index
-    pokemons.push(req.body)
+   pokemons.unshift(req.body)
 
-    res.json(req.body)
+    //res.json(req.body)
+    
 
     // redirect to main page
     res.redirect("/pokemon")
