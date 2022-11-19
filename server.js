@@ -1,15 +1,17 @@
 require("dotenv").config();
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 const methodOverride = require("method-override");
 const pokemons = require("./models/pokemon");// import Pokemons data
 
 // Middleware
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));// parse data from form submissions into req.body
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use("/static", express.static("public"));
+
+
 
 // Index Route
 app.get("/pokemon", (req, res) =>{
@@ -18,17 +20,25 @@ app.get("/pokemon", (req, res) =>{
     })
 });
 
-// New route - add.ejs
+// New route - new.ejs
 
-app.get("/pokemon/add", (req, res) =>{
-    res.render("add.ejs")
+app.get("/pokemon/new", (req, res) =>{
+    res.render("new.ejs")
 });
 
 
 // Create Route
 app.post("/pokemon", (req, res) =>{
-    res.json(req.body)
-})
+
+    // pushes the added pokemon to the index
+    pokemons.push(req.body)
+
+    //res.json(req.body)
+
+    // redirect to main page
+    res.redirect("/pokemon")
+
+});
 
 
 
@@ -36,6 +46,7 @@ app.post("/pokemon", (req, res) =>{
 
 // Show Route
 app.get("/pokemon/:id", (req, res) =>{
+    //console.log("show",pokemons[req.params.id])
     res.render("show.ejs", {
         pokemon: pokemons[req.params.id],
          index: req.params.id

@@ -8,13 +8,15 @@
     <title>PokedexLab</title>
 </head>
 <body>
-  <h1>Pokedex</h1>
+  <h1>Pokedex</h1> <a href="/pokemon/new">Add To Pokedex</a>
     
   <div class="index">
     
     <% for(let i = 0; i < 20; i++) { %>
         <a href="/pokemon/<%=i%>"><img src="<%=pokemon[i].img%>" width="150px" height="150px"></a>
-        <%#= pokemon[i].name %>
+        
+        <%= pokemon[i].name %>
+        <%= pokemon[i].stats.hp %>
     <% } %>
 </div>
 
