@@ -8,7 +8,7 @@ const pokemons = require("./models/pokemon");// import Pokemons data
 // Middleware
 app.use(express.urlencoded({extended: true}));// parse data from form submissions into req.body
 app.use(express.json());
-app.use(methodOverride('_method'));
+app.use(methodOverride("_method"));
 app.use("/static", express.static("public"));
 
 
@@ -33,7 +33,7 @@ app.post("/pokemon", (req, res) =>{
     // pushes the added pokemon to the index
     pokemons.push(req.body)
 
-    //res.json(req.body)
+    res.json(req.body)
 
     // redirect to main page
     res.redirect("/pokemon")
