@@ -11,7 +11,8 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 app.use("/static", express.static("public"));
 
-
+// Home Route
+app.get('/', (req, res) => res.redirect("/pokemon"));
 
 // Index Route
 app.get("/pokemon", (req, res) =>{
@@ -35,13 +36,18 @@ app.post("/pokemon", (req, res) => {
 
     //res.json(req.body)
     
-
     // redirect to main page
     res.redirect("/pokemon")
 
 });
 
-
+// Delete Route
+app.delete("/pokemon/:id", (req, res) => {
+    // splice - deletes the item from the array
+    pokemons.splice(req.params.id, 1)
+    // redirect use to index page
+    res.redirect("/pokemon")
+})
 
 
 
