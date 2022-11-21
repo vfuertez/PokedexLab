@@ -9,15 +9,16 @@
 </head>
 <body>
     
-<h1>Update Pokemon</h1>
+<h1>Update <%=pokemon.name%></h1>
 
 
 
 <div>
 <form action="/pokemon/<%= index %>?_method=PUT" method="POST">
 
-    <input type="image" name="img" value="<%=pokemon.img%>"> <br>    
+       
     <img src="<%=pokemon.img%>"><br>
+    <input type="text" name="img" value="<%=pokemon.img%>"> <br>
     Name: <input type="text" name="name" value="<%=pokemon.name%>"> <br>
     Type : <input type="text" name="type" value="<%=pokemon.type%>"> <br>
     HP : <input type="text" name="stats[hp]" value="<%=pokemon.stats.hp %>"><br>

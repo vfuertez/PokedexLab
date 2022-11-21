@@ -17,7 +17,8 @@ app.get('/', (req, res) => res.redirect("/pokemon"));
 // Index Route
 app.get("/pokemon", (req, res) =>{
     res.render("index.ejs", {
-        pokemon: pokemons
+        pokemon: pokemons,
+        index: req.params.id
     })
 });
 
