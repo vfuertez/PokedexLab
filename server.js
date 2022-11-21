@@ -41,13 +41,31 @@ app.post("/pokemon", (req, res) => {
 
 });
 
+// Edit Route
+app.get("/pokemon/:id/edit", (req,res) => {
+    res.render("edit.ejs", {
+        pokemon: pokemons[req.params.id],
+        index: req.params.id
+    })
+});
+
+// Update Route
+app.put("/pokemon/:id", (req, res) =>{
+
+    // update pokemon
+    pokemons[req.params.id] = req.body
+
+    res.redirect("/pokemon")
+})
+
 // Delete Route
 app.delete("/pokemon/:id", (req, res) => {
     // splice - deletes the item from the array
     pokemons.splice(req.params.id, 1)
     // redirect user to index page
     res.redirect("/pokemon")
-})
+});
+
 
 
 

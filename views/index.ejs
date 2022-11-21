@@ -12,10 +12,9 @@
     
   <div class="index">
     
-    <% for(let i = 0; i < 150; i++) { %>
+    <% for(let i = 0; i < 6; i++) { %>
         <a href="/pokemon/<%=i%>"><img src="<%=pokemon[i].img%>" width="150px" height="150px"></a>
-       
-
+        
        Name: <%= pokemon[i].name %><br>
        Type: <%= pokemon[i].type %><br>
        HP: <%= pokemon[i].stats.hp %><br>
