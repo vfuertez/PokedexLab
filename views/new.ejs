@@ -10,10 +10,13 @@
 <body>
     
 <h1>Add Pokemon</h1>
+<% const randomPokemon = pokemons[Math.floor(Math.random() * pokemons.length)] %>
+
 
 <div>
 <form action="/pokemon" method="POST">
-
+    <input type="image" id="img" 
+    src="<%=randomPokemon.img%>">
      Name: <input type="text" name="name" alt="name"> <br>
     Type : <input type="text" name="type"><br>
     HP : <input type="text" name="stats[hp]"><br>

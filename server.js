@@ -24,7 +24,7 @@ app.get("/pokemon", (req, res) =>{
 // New route - new.ejs
 
 app.get("/pokemon/new", (req, res) =>{
-    res.render("new.ejs")
+    res.render("new.ejs", {pokemons})
 });
 
 
@@ -45,7 +45,7 @@ app.post("/pokemon", (req, res) => {
 app.delete("/pokemon/:id", (req, res) => {
     // splice - deletes the item from the array
     pokemons.splice(req.params.id, 1)
-    // redirect use to index page
+    // redirect user to index page
     res.redirect("/pokemon")
 })
 
