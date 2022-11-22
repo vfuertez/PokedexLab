@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
     <title>Pokedex</title>
 </head>
+
 <body>
     
-<h1>Update <%=pokemon.name%></h1>
 
 
+<div class="edit">
+    
+    <img id="edit_image" src="<%=pokemon.img%>" width="200px" height="200px" border-radius="50px"><br>
 
-<div>
 <form action="/pokemon/<%= index %>?_method=PUT" method="POST">
-
-       
-    <img src="<%=pokemon.img%>"><br>
+    
     <input type="text" name="img" value="<%=pokemon.img%>"> <br>
     Name: <input type="text" name="name" value="<%=pokemon.name%>"> <br>
     Type : <input type="text" name="type" value="<%=pokemon.type%>"> <br>
@@ -28,12 +28,13 @@
     SPattack: <input type="text" name="stats[spattack]" value="<%= pokemon.stats.spattack %>"><br>
     SPdefense: <input type="text" name="stats[spdefense]" value="<%=pokemon.stats.spdefense %>"> <br>
     
-<input type="submit" value="Update">
+<input id="update" type="submit" value="Update">
+<button><a href="/pokemon">Back</a></button><br>
 </form>
 <br><br>
 </div>
 
-<a href="/pokemon"><button>Back</button></a><br>
+
 
 </body>
 </html>

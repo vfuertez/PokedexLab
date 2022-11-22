@@ -4,34 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
     <title>Pokedex</title>
 </head>
 <body>
     
-<h1>Add Pokemon</h1>
+
 <% const randomPokemon = pokemons[Math.floor(Math.random() * pokemons.length)] %>
 
 
-<div>
+<div class="new">
 <form action="/pokemon" method="POST">
-<img src="<%=randomPokemon.img%>">
- <input type="text" name="img"  value="<%=randomPokemon.img%>" width="200px" height="200px"> <br>
-     Name: <input type="text" name="name" alt="name"> <br>
-    Type : <input type="text" name="type"><br>
+<img id="new_img" src="<%=randomPokemon.img%> " width="200px" height="200px" ><br>
+ 
+     Name: <input type="text" name="name" value="<%=randomPokemon.name%>" > <br>
+    Type : <input type="text" name="type" value="<%=randomPokemon.type%>" > <br>
     HP : <input type="text" name="stats[hp]"><br>
     Attack: <input type="text" name="stats[attack]"><br>
     Defense: <input type="text" name="stats[defense]"><br>
     Speed: <input type="text" name="stats[speed]"><br>
     SPattack: <input type="text" name="stats[spattack]"><br>
     SPdefense: <input type="text" name="stats[spdefense]"><br>
-    
-<input type="submit" value="Add Pokemon">
+    <input  type="text" name="img"  value="<%=randomPokemon.img%>" > <br>
+<input id="add_pokemon" type="submit" value="Add">
+<button><a href="/pokemon">Back</a></button><br>
 </form>
 <br><br>
 </div>
 
-<a href="/pokemon"><button>Back</button></a><br>
+
 
 </body>
 </html>
