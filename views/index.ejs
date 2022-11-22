@@ -5,27 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/styles.css">
-    <title>PokedexLab</title>
+    <title>Pokedex</title>
 </head>
 <body>
-  <h1>Pokedex</h1> <a href="/pokemon/new">Add To Pokedex</a>
+  <header>
+    <h1 class="logo">Pokedex</h1>
+    <nav>  
+<h2 id="navPoke"><a href="/pokemon/new">Add To Pokedex</a></h2>
+    </nav>
+  </header>
     
-  <div class="index">
+
+
+   
+
+<main>
+
+  <div class="indexGrid">
     
-    <% for(let i = 0; i < 6; i++) { %>
-        <a href="/pokemon/<%=i%>"><img src="<%=pokemon[i].img%>" width="150px" height="150px"></a>
+    <% for(let i = 0; i < 15; i++) { %>
+        <a id="poke_list" href="/pokemon/<%=i%>"><img src="<%=pokemon[i].img%>" width="150px" height="150px" border-radius="50px"></a>
         
-       Name: <%= pokemon[i].name %><br>
+      <!--  Name: <%= pokemon[i].name %><br>
        Type: <%= pokemon[i].type %><br>
        HP: <%= pokemon[i].stats.hp %><br>
        Attack: <%= pokemon[i].stats.attack %><br>
        Defense: <%= pokemon[i].stats.defense %><br>
-       Speed: <%= pokemon[i].stats.speed%><br>
+       Speed: <%= pokemon[i].stats.speed%><br> -->
        
     <% } %>
 
        
 </div>
-
+</main>
 </body>
 </html>

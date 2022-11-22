@@ -2,28 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
     <title>PokedexLab</title>
 </head>
 <body>
     
 <div class="show">
-    <h2><%= pokemon.name %></h2>
-    <img src="<%=pokemon.img%>"><br>
-    <%= pokemon.type %> <br>
+    <div><img id="show_img" src="<%=pokemon.img%>" width="200px" height="200px"><br></div>
+    
+    Name: <%= pokemon.name %> <br>
+    Type: <%= pokemon.type %> <br>
     HP: <%= pokemon.stats.hp %><br>
     Attack: <%= pokemon.stats.attack %><br>
     Defense: <%= pokemon.stats.defense %><br>
     SPattack: <%= pokemon.stats.spattack %><br>
     SPdefense: <%= pokemon.stats.spdefense %><br>
     Speed: <%= pokemon.stats.speed%><br>
+    
 </div><br><br>
+
+<div class="nav_show">
+    
+
+<button><a href="/pokemon/<%= index %>/edit">Edit</a></button>
+
+<button><a href="/pokemon">Back</button></a></button>
+
 <form action="/pokemon/<%=index%>?_method=DELETE" method="POST"> 
-    <input type="submit" value="Delete">
+    <input id="delete" type="submit" value="Delete">
   </form>
-<a href="/pokemon/<%= index %>/edit"><button>Edit</button></a>
-<a href="/pokemon"><button>Back</button></a><br>
+</div>
+
 
 </body>
 </html>
