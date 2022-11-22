@@ -9,9 +9,9 @@
 </head>
 <body>
   <header>
-    <h1 class="logo">Pokedex</h1>
+    <h1 id="logo">PokeDex</h1>
     <nav>  
-<h2 id="navPoke"><a href="/pokemon/new">Add To Pokedex</a></h2>
+<button id="navPoke"><a href="/pokemon/new">Add To Pokedex</a></button>
     </nav>
   </header>
     
@@ -20,6 +20,7 @@
   <div class="indexGrid">
     
     <% for(let i = 0; i < 18; i++) { %>
+      
         <a id="poke_list" href="/pokemon/<%=i%>"><img src="<%=pokemon[i].img%>" width="150px" height="150px" border-radius="50px"></a>
         
       <!--  Name: <%= pokemon[i].name %><br>
