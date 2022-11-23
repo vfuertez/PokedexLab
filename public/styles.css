@@ -108,7 +108,7 @@ button {
 }
 
 #edit_image {
-    background-color: rgba(153, 35, 3);
+    background-color: rgb(134, 182, 206);
     padding:10px;
     color: rgb(8, 11, 10);
     text-align: center;
@@ -117,6 +117,9 @@ button {
     
     padding-top:8px ;
     padding-bottom:8px ;
+    border-image: linear-gradient(120deg, rgb(252, 211, 9), rgb(57, 60, 230)) 1;
+    border-width: 4px;
+    border-style: solid;
 }
 
 #show_img {

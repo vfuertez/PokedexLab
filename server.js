@@ -22,7 +22,7 @@ app.get("/pokemon", (req, res) =>{
     })
 });
 
-// New route - new.ejs
+// New route 
 
 app.get("/pokemon/new", (req, res) =>{
     res.render("new.ejs", {pokemons})
@@ -42,6 +42,7 @@ app.post("/pokemon", (req, res) => {
 
 });
 
+
 // Edit Route
 app.get("/pokemon/:id/edit", (req,res) => {
     res.render("edit.ejs", {
@@ -50,6 +51,7 @@ app.get("/pokemon/:id/edit", (req,res) => {
     })
 });
 
+
 // Update Route
 app.put("/pokemon/:id", (req, res) =>{
 
@@ -57,7 +59,8 @@ app.put("/pokemon/:id", (req, res) =>{
     pokemons[req.params.id] = req.body
 
     res.redirect("/pokemon")
-})
+});
+
 
 // Delete Route
 app.delete("/pokemon/:id", (req, res) => {
@@ -66,8 +69,6 @@ app.delete("/pokemon/:id", (req, res) => {
     // redirect user to index page
     res.redirect("/pokemon")
 });
-
-
 
 
 // Show Route

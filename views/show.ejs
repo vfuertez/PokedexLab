@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/styles.css">
-    <title>PokedexLab</title>
+    <title>Pokedex</title>
 </head>
+
 <body>
     
 <div class="show">
@@ -28,10 +29,11 @@
 
 <button><a href="/pokemon/<%= index %>/edit">Edit</a></button>
 
-<button><a href="/pokemon">Back</button></a></button>
+<button><a href="/pokemon">Back</a></button>
 
 <form action="/pokemon/<%=index%>?_method=DELETE" method="POST"> 
     <input id="delete" type="submit" value="Delete">
+    
   </form>
 </div>
 

@@ -9,12 +9,12 @@
 </head>
 <body>
     
-
 <% const randomPokemon = pokemons[Math.floor(Math.random() * pokemons.length)] %>
 
-
 <div class="new">
+
 <form action="/pokemon" method="POST">
+
 <img id="new_img" src="<%=randomPokemon.img%> " width="200px" height="200px" ><br>
  
      Name: <input type="text" name="name" value="<%=randomPokemon.name%>" > <br>
@@ -25,14 +25,14 @@
     Speed: <input type="text" name="stats[speed]"><br>
     SPattack: <input type="text" name="stats[spattack]"><br>
     SPdefense: <input type="text" name="stats[spdefense]"><br>
-    <input  type="text" name="img"  value="<%=randomPokemon.img%>" > <br>
+    <input  type="hidden" name="img"  value="<%=randomPokemon.img%>" > <br>
+
 <input id="add_pokemon" type="submit" value="Add">
+
 <button><a href="/pokemon">Back</a></button><br>
+
 </form>
-<br><br>
 </div>
-
-
 
 </body>
 </html>
